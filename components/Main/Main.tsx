@@ -2,6 +2,7 @@
 'use client'
 import CartsModal from '../Products/CartsModal'
 import Products from '../Products/Products'
+import Banner from './Banner'
 import Footer from './Footer'
 import Hero from './Hero'
 
@@ -11,6 +12,7 @@ export const Main = ({ products }: { products: any[] }) => {
       <Hero />
       <Products products={products} />
       <CartsModal />
+      <Banner />
       <Footer />
     </div>
   )
