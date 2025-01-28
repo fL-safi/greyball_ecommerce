@@ -6,7 +6,7 @@ async function getProducts() {
     'https://greyball-ecommerce-default-rtdb.firebaseio.com/products.json'
   )
   const products = await response.json()
-  console.log(products)
+  console.log(products) //To print data in console, so that its a server side data
   return products || []
 }
 
