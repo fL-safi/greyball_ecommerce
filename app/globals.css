@@ -39,8 +39,8 @@ body {
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --bg-color: #1a202c;
-  --text-color: #ffffff;
+  --bg-color: #ffffff;
+  --text-color: #000000;
 }
 
 [data-theme="dark"] .bg-white {
