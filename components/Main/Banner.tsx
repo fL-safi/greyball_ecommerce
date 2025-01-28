@@ -14,19 +14,19 @@ function Banner() {
         <ul className="mt-4 space-y-2 text-gray-700">
           <li className="flex items-start">
             <span className="text-lg mr-2">✔</span>
-            <strong>Eco-sustainable:</strong> All recyclable materials, 0% CO2 emissions
+            All recyclable materials, 0% CO2 emissions
           </li>
           <li className="flex items-start">
             <span className="text-lg mr-2">✔</span>
-            <strong>Hypoallergenic:</strong> 100% natural, human-friendly ingredients
+            100% natural, human-friendly ingredients
           </li>
           <li className="flex items-start">
             <span className="text-lg mr-2">✔</span>
-            <strong>Handmade:</strong> All candles are crafted with love.
+            All candles are crafted with love.
           </li>
           <li className="flex items-start">
             <span className="text-lg mr-2">✔</span>
-            <strong>Long burning:</strong> No more waste. Created to last long.
+            No more waste. Created to last long.
           </li>
         </ul>
 
