@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is my attempt you can clone the repo, run npm I, and then npm run dev to run the project locally
 
-## Getting Started
+Besides this, I have deployed this project on Vercel, so you can visit the link: https://greyball-ecommerce-nu.vercel.app/
 
-First, run the development server:
+Please note the:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Latest nextJS version is used
+2. I have created a sample JSON and then imported it to the Firebase real-time database as a mock backend
+3. Typescript is used.
+4. The same provided product list structure is used.
+5. The product listing page that displays the fetched product data is in a grid layout. Each
+product card should include the Product image, name, description(truncated up to 100 chars), price(formatted), and rating.
+6. Implement pagination for the product listing. The initial page displays only 10 products and the user can interact with the page for more data, next and previous pages.
+7. The real-time search is implemented.
+8. Sorting(rating and price) functionality is implemented.
+9. The user can add the products to the card, and the cart items and total price are displayed in the fixed header, A cart modal has been developed to review/increase/decrease the quantity of products.
+10. The Redux toolkit is used for overall state management.
+11. The design is responsive and I use the tailwind CSS.
+12. I will provide a Git link also the project is deployed on Vercel https://greyball-ecommerce-nu.vercel.app/
