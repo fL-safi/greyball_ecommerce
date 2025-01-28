@@ -25,15 +25,15 @@ function CartsModal() {
           className="fixed inset-0 z-50 flex justify-center items-center bg-gray-900 bg-opacity-50"
         >
           <div className="relative p-4 w-full max-w-2xl max-h-full">
-            <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <div className="relative bg-white rounded-lg shadow-sm ">
+              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                <h3 className="text-xl font-semibold text-gray-900">
                   Your Cart
                 </h3>
                 <button
                   onClick={toggleModal}
                   type="button"
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
                 >
                   <svg
                     className="w-3 h-3"
@@ -62,7 +62,7 @@ function CartsModal() {
                 {cartItems.length > 0 ? (
                   cartItems.map((item) => <CartItem key={item.id} item={item} />)
                 ) : (
-                  <p className="text-center text-gray-500 dark:text-gray-300 text-lg font-medium">
+                  <p className="text-center text-gray-500 text-lg font-medium">
                     🛒 Your cart is empty.
                   </p>
                 )}
@@ -70,20 +70,20 @@ function CartsModal() {
 
               {/* Total price and checkout */}
               <div className="flex justify-end">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white py-2 px-6">
+                <h3 className="text-xl font-semibold text-gray-900 py-2 px-6">
                   Total Price: ${totalPrice.toFixed(2)}
                 </h3>
               </div>
 
               {/* Checkout Button */}
-              <div className="flex justify-end items-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <div className="flex justify-end items-end p-4 md:p-5 border-t border-gray-200 rounded-b ">
                 <button
                   type="button"
                   disabled={cartItems.length === 0} // Disable when cart is empty
                   className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center ${
                     cartItems.length === 0
                       ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                      : 'bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
                   }`}
                 >
                   Proceed Checkout

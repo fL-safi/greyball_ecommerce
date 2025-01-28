@@ -33,7 +33,7 @@ function Header() {
         <meta property="og:url" content="https://greyballtest.com" /> {/*  Not adding real domain */}
       </Head>
       <div>
-        <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0 z-50 shadow-md">
+        <nav className="bg-white border-gray-200 fixed top-0 left-0 right-0 z-50 shadow-md">
           <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
             {/* Logo */}
             <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
@@ -42,7 +42,7 @@ function Header() {
                 className="h-8"
                 alt="Greyball Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap">
                 Greyball
               </span>
             </div>
@@ -59,7 +59,7 @@ function Header() {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="w-7 h-7 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  className="w-7 h-7 text-gray-500 hover:text-gray-900"
                 >
                   <path
                     strokeLinecap="round"
@@ -76,7 +76,7 @@ function Header() {
               </div>
 
               {totalPrice > 0 && (
-                <span className="text-lg font-semibold text-gray-800 dark:text-white">
+                <span className="text-lg font-semibold text-gray-800">
                   ${totalPrice.toFixed(2)}
                 </span>
               )}
