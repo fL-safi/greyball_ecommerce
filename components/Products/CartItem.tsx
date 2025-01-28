@@ -9,7 +9,7 @@ interface CartItem {
   price: number;
   quantity: number;
   totalPrice: number;
-  image: string; // Ensure the image property is present here
+  image: string;
 }
 
 interface CartItemProps {

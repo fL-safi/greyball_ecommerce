@@ -32,6 +32,12 @@ export const ProductCard = ({ product }: ProductProps) => {
     );
   };
 
+  // Helper function to truncate description
+  const truncateDescription = (description: string, length: number) =>
+    description.length > length
+      ? description.substring(0, length) + '...'
+      : description;
+
   return (
     <div className="bg-white shadow-md rounded-2xl overflow-hidden">
       <img
@@ -41,10 +47,12 @@ export const ProductCard = ({ product }: ProductProps) => {
       />
       <div className="p-4">
         <h2 className="text-xl font-semibold text-gray-800">{product.title}</h2>
-        <p className="text-gray-600 text-sm mt-2">{product.description}</p>
+        <p className="text-gray-600 text-sm mt-2">
+          {truncateDescription(product.description, 100)}
+        </p>
         <div className="flex items-center justify-between mt-4">
           <span className="text-lg font-bold text-gray-800">
-            {product.currency} {product.price}
+            {product.currency} {product.price.toFixed(2)}
           </span>
           <span className="text-sm text-yellow-500 font-semibold">
             ⭐ {product.rating}

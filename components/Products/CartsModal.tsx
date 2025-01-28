@@ -13,10 +13,7 @@ function CartsModal() {
     dispatch(cartActions.setShowCart());
   };
 
-  const totalPrice = cartItems.reduce(
-    (sum, item) => sum + item.totalPrice,
-    0
-  );
+  const totalPrice = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
 
   return (
     <>
@@ -57,14 +54,18 @@ function CartsModal() {
                 </button>
               </div>
 
-              {/* Scrollable cart items */}
+              {/* Cart Items or Empty Message */}
               <div
                 className="p-4 md:p-5 space-y-4 overflow-y-auto"
-                style={{ maxHeight: '25rem' }} // Limit height to 400px (25rem)
+                style={{ maxHeight: '25rem' }} // (25rem)
               >
-                {cartItems.map((item) => (
-                  <CartItem key={item.id} item={item} />
-                ))}
+                {cartItems.length > 0 ? (
+                  cartItems.map((item) => <CartItem key={item.id} item={item} />)
+                ) : (
+                  <p className="text-center text-gray-500 dark:text-gray-300 text-lg font-medium">
+                    🛒 Your cart is empty.
+                  </p>
+                )}
               </div>
 
               {/* Total price and checkout */}
@@ -73,11 +74,17 @@ function CartsModal() {
                   Total Price: ${totalPrice.toFixed(2)}
                 </h3>
               </div>
+
+              {/* Checkout Button */}
               <div className="flex justify-end items-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                 <button
-                  data-modal-hide="default-modal"
                   type="button"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  disabled={cartItems.length === 0} // Disable when cart is empty
+                  className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center ${
+                    cartItems.length === 0
+                      ? 'bg-gray-400 cursor-not-allowed'
+                      : 'bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                  }`}
                 >
                   Proceed Checkout
                 </button>

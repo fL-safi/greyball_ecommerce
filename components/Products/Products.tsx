@@ -19,7 +19,7 @@ const PRODUCTS_PER_PAGE = 10;
 export default function Products({ products }: { products: Product[] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filter, setFilter] = useState(""); // State to store selected filter
+  const [filter, setFilter] = useState("");
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);

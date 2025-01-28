@@ -7,14 +7,14 @@ interface CartItem {
   quantity: number;
   totalPrice: number;
   name: string;
-  image: string; // Include the image property here
-
+  image: string;
 }
 
 // Define the type for the cart state
 interface CartState {
   itemsList: CartItem[];
   totalQuantity: number;
+  totalPrice: number;
   showCart: boolean;
 }
 
@@ -22,10 +22,11 @@ interface CartState {
 const initialState: CartState = {
   itemsList: [],
   totalQuantity: 0,
+  totalPrice: 0,
   showCart: false,
 };
 
-// Create the slice
+// I have Created a cart slice for adding, removing cart items
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
@@ -49,11 +50,16 @@ const cartSlice = createSlice({
           quantity: 1,
           totalPrice: newItem.price,
           name: newItem.name,
-          image: newItem.image, // Add the image property here
-
+          image: newItem.image,
         });
         state.totalQuantity++;
       }
+
+      // Update the total price
+      state.totalPrice = state.itemsList.reduce(
+        (sum, item) => sum + item.totalPrice,
+        0
+      );
     },
 
     // Remove from cart action
@@ -74,6 +80,12 @@ const cartSlice = createSlice({
           existingItem.totalPrice -= existingItem.price;
         }
       }
+
+      // Update the total price
+      state.totalPrice = state.itemsList.reduce(
+        (sum, item) => sum + item.totalPrice,
+        0
+      );
     },
 
     // Toggle cart visibility action
